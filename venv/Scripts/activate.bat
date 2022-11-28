@@ -34,3 +34,4 @@ if defined _OLD_CODEPAGE (
 
 set FLASK_APP=pybo
 set FLASK_ENV=development
+set APP_CONFIG_FILE=D:\Panda\스터디\DoIt_Flask\Test_Project\config\development.py

@@ -2,3 +2,4 @@ pybo.db
 __pychche__
 *.pyc
 .idea
+venv
