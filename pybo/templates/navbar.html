@@ -1,0 +1,54 @@
+<!-- 네비게이션바 -->
+
+<!-- <script defer src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js'></script> -->
+<!-- <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css'> -->
+
+<!-- <nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class='navbar-nav mr-auto'>
+        <li class='nav-item dropdown'>
+          <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownAbout' role='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>About</a>
+          <div class='dropdown-menu' aria-labelledby='navbarDropdownAbout'>
+            <span class='nav-link' data-toggle='modal' data-target='#CUserAbout'>This Site</span>
+            <span class='nav-link' data-toggle='modal' data-target='#CUabout'>Utils</span>
+            <span class='nav-link' data-toggle='modal' data-target='#CUlicense'>License</span>
+            <a class='nav-link' href="https://wikipedia.org/" target="_blank">Wiki</a>
+          </div>
+        </li>
+        <li class='nav-item'> <span class='nav-link' onclick="function('charts.txt', true);">Home</span> </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <a class="navbar-brand" href="{{ url_for('main.index') }}">Pybo</a>
+    <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+        {% if g.user %}
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('auth.logout') }}">{{ g.user.username }} 로그아웃</a>
+          </li>
+        </ul>
+        
+        {% else %}
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('auth.signup') }}">계정생성</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{{ url_for('auth.login') }}">로그인</a>
+            </li>
+        </ul>
+        {% endif %}
+ 
+    </div>
+</nav>
